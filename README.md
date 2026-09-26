@@ -1,2 +1,1 @@
-# cs2114-project2-group67
-
+Scoping document: https://docs.google.com/document/d/1BeiDmwNcfFkO5ODyWj60uXFrrqvxOizMH2Rcr6rEW_c/edit?usp=sharing
