@@ -8,7 +8,6 @@ import java.util.*;
  *  @version Sep 26, 2026
  * @param <T> 
  */
-//TODO: Add shuffle() method that shuffles the playlist
 public class Playlist<T> {
     private Node<T> firstNode;
     private int numberOfEntries;
