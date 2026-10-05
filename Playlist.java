@@ -56,13 +56,16 @@ public class Playlist<T> {
         }
 
         StringBuilder r = new StringBuilder();
-        r.append("Playlist containing ").append(numberOfEntries).append(" songs: ");
-
+        if(numberOfEntries==1) {
+            r.append("Playlist containing ").append(numberOfEntries).append(" song:\n");
+        }else {
+            r.append("Playlist containing ").append(numberOfEntries).append(" songs:\n");
+        }
         Node<T> current = firstNode;
         while (current != null) {
             r.append(current.getData().toString());
             if (current.getNext() != null) {
-                r.append(", ");
+                r.append("\n");
             }
             current = current.getNext();
         }
@@ -295,6 +298,8 @@ public class Playlist<T> {
             addToEnd(before[arr[i]]);
         }
     }
+    //TODO: getFreq(artist)
+    //TODO: getHistory() using file I/O
     /**
      * Rejects null entries.
      *
