@@ -175,13 +175,11 @@ public class PlaylistTest {
      */
     @Test
     public void testToString() {
-        assertEquals("Playlist containing 5 songs: Song 1 by: Artist, runtime: 1"
-            + " seconds, Song 2 by: Artist, runtime: 2 seconds, Song 3 by:"
-            + " Artist, runtime: 3 seconds, Song 4 by: Artist, runtime: 4 "
-            + "seconds, Song 5 by: Artist, runtime: 5 seconds", p.toString());
-        for(int i = 0; i < 5; i++) {
+        for(int i = 0; i < 4; i++) {
             p.remove();
         }
+        assertEquals("Song 5,Artist,5", p.toString());
+        p.remove();
         assertEquals("Playlist is empty", p.toString());
     }
     // ----------------------------------------------------------
@@ -190,6 +188,9 @@ public class PlaylistTest {
      */
     @Test
     public void testShuffle() {
+        for(int i = 0; i < 10; i++) {
+            p.add(new Song("Name", "Artist", i));
+        }
         Song[] before = new Song[p.size()];
         before = p.toArray(before);
         //System.out.println(Arrays.toString(before));
