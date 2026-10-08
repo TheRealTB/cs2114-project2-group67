@@ -1,19 +1,19 @@
 package musicPlaylist;
 // -------------------------------------------------------------------------
 /**
- *  A song with a name and runtime
+ *  A song with a name, artist, and runtime
  * 
  *  @author Tyler
  *  @version Sep 26, 2026
  */
-public class Song {
+public class Song implements MediaType{
     //~ Fields ................................................................
     private String name;
     private String artist;
     private int runtimeInSeconds;
     // ----------------------------------------------------------
     /**
-     * Creates a song with name and runtime
+     * Creates a new Song object
      * @param name
      * @param artist
      * @param runtimeInSeconds
@@ -38,7 +38,7 @@ public class Song {
      * Returns artist name
      * @return artist
      */
-    public String getArtist() {
+    public String getCreator() {
         return artist;
     }
     // ----------------------------------------------------------
@@ -60,10 +60,10 @@ public class Song {
     // ----------------------------------------------------------
     /**
      * Changes artist
-     * @param artist
+     * @param creator
      */
-    public void setArtist(String artist) {
-        this.artist = artist;
+    public void setCreator(String creator) {
+        this.artist = creator;
     }
     // ----------------------------------------------------------
     /**
@@ -87,7 +87,7 @@ public class Song {
             return false;
         }
         return(this.getName().equals(((Song)other).getName())&&
-            this.getArtist().equals(((Song)other).getArtist())&&
+            this.getCreator().equals(((Song)other).getCreator())&&
             this.getRuntime()==((Song)other).getRuntime());
     }
     // ----------------------------------------------------------
@@ -97,7 +97,52 @@ public class Song {
      */
     @Override
     public String toString() {
-        return this.name + " by: " + this.artist + ", runtime: " + 
-    this.runtimeInSeconds + " seconds";
+        return this.name+","+this.artist+","+this.runtimeInSeconds;
+    }
+    // ----------------------------------------------------------
+    /**
+     * ToString for printing to console
+     * @return pretty string
+     */
+    public String formattedToString() {
+        return this.name + " by: " + this.artist + ", " + runtimeFormatter();
+    }
+    // ----------------------------------------------------------
+    /**
+     * Formats the runtime to Hr:Min:Sec
+     * @return runtime
+     */
+    public String runtimeFormatter() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Runtime: ");
+        int runtimeHours;
+        int runtimeMinutes;
+        int runtimeSeconds = runtimeInSeconds;
+        if(runtimeSeconds>=60) {
+            runtimeMinutes = runtimeSeconds/60;
+            runtimeSeconds%=60;
+            if(runtimeMinutes>=60) {
+                runtimeHours = runtimeMinutes/60;
+                runtimeMinutes%=60;
+                if(runtimeHours!=0) {    
+                    sb.append(runtimeHours>1 ? runtimeHours
+                            + " Hours ": runtimeHours + " Hour ");
+                }else {
+                    sb.deleteCharAt(sb.length()-1);
+                }
+            }
+            if(runtimeMinutes!=0) {
+                sb.append(runtimeMinutes>1 ? runtimeMinutes
+                    + " Minutes ": runtimeMinutes + " Minute ");
+            }else {
+                sb.deleteCharAt(sb.length()-1);
+            }
+        }
+        if(runtimeSeconds!=0) {
+            sb.append (runtimeSeconds >1 ? runtimeSeconds + " Seconds ": runtimeSeconds + " Second");
+        }else{
+            sb.deleteCharAt(sb.length()-1);
+        }
+        return sb.toString();
     }
 }
