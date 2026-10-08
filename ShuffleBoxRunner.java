@@ -47,52 +47,54 @@ public class ShuffleBoxRunner {
         try {
             f = new File("History");
             scanFile = new Scanner(f);
-            String s = scanFile.nextLine();
-            if(!s.equals("Playlist is empty")) {
-                String[] sArray = s.split(",");
-                if(sArray.length==3) {
-                    list.addToEnd(new Song(sArray[0],
-                        sArray[1],
-                        Integer.parseInt(sArray[2])
-                        ));
-                    while(scanFile.hasNextLine()) {
-                        s=scanFile.nextLine();
-                        //Songs in Title,Artist,Runtime order
-                        String[] sArray1 = s.split(",");
-                        if(sArray1.length == 3) {
-                            list.addToEnd(new Song(sArray1[0],
-                            sArray1[1],
-                            Integer.parseInt(sArray1[2])
+            if(scanFile.hasNextLine()) {
+                String s = scanFile.nextLine();
+                if(!s.equals("Playlist is empty")){
+                    String[] sArray = s.split(",");
+                    if(sArray.length==3) {
+                        list.addToEnd(new Song(sArray[0],
+                            sArray[1],
+                            Integer.parseInt(sArray[2])
                             ));
-                        }else if(sArray1.length == 4) {
-                            list.addToEnd(new Movie(sArray1[0],
-                                sArray1[1],
-                                Integer.parseInt(sArray1[2]),
-                                Integer.parseInt(sArray1[3])
-                                ));
-                        }
-                    }
-                }else if(sArray.length==4) {
-                    list.addToEnd(new Movie(sArray[0],
-                        sArray[1],
-                        Integer.parseInt(sArray[2]), 
-                        Integer.parseInt(sArray[3])
-                        ));
-                    while(scanFile.hasNextLine()) {
-                        s=scanFile.nextLine();
-                        //Songs in Title,Artist,Runtime order
-                        String[] sArray1 = s.split(",");
-                        if(sArray1.length == 3) {
-                            list.addToEnd(new Song(sArray1[0],
+                        while(scanFile.hasNextLine()) {
+                            s=scanFile.nextLine();
+                            //Songs in Title,Artist,Runtime order
+                            String[] sArray1 = s.split(",");
+                            if(sArray1.length == 3) {
+                                list.addToEnd(new Song(sArray1[0],
                                 sArray1[1],
                                 Integer.parseInt(sArray1[2])
                                 ));
-                        }else if(sArray.length == 4) {
-                            list.addToEnd(new Movie(sArray1[0],
-                                sArray1[1],
-                                Integer.parseInt(sArray1[2]),
-                                Integer.parseInt(sArray1[3])
-                                ));
+                            }else if(sArray1.length == 4) {
+                                list.addToEnd(new Movie(sArray1[0],
+                                    sArray1[1],
+                                    Integer.parseInt(sArray1[2]),
+                                    Integer.parseInt(sArray1[3])
+                                    ));
+                            }
+                        }
+                    }else if(sArray.length==4) {
+                        list.addToEnd(new Movie(sArray[0],
+                            sArray[1],
+                            Integer.parseInt(sArray[2]), 
+                            Integer.parseInt(sArray[3])
+                            ));
+                        while(scanFile.hasNextLine()) {
+                            s=scanFile.nextLine();
+                            //Songs in Title,Artist,Runtime order
+                            String[] sArray1 = s.split(",");
+                            if(sArray1.length == 3) {
+                                list.addToEnd(new Song(sArray1[0],
+                                    sArray1[1],
+                                    Integer.parseInt(sArray1[2])
+                                    ));
+                            }else if(sArray.length == 4) {
+                                list.addToEnd(new Movie(sArray1[0],
+                                    sArray1[1],
+                                    Integer.parseInt(sArray1[2]),
+                                    Integer.parseInt(sArray1[3])
+                                    ));
+                            }
                         }
                     }
                 }
