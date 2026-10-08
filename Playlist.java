@@ -46,7 +46,7 @@ public class Playlist<T> {
     }
     // ----------------------------------------------------------
     /**
-     * String of all songs in playlsit
+     * String of all media in playlsit
      * @return toString of all songs in playlsit
      */
     @Override
@@ -56,11 +56,6 @@ public class Playlist<T> {
         }
 
         StringBuilder r = new StringBuilder();
-        if(numberOfEntries==1) {
-            r.append("Playlist containing ").append(numberOfEntries).append(" song:\n");
-        }else {
-            r.append("Playlist containing ").append(numberOfEntries).append(" songs:\n");
-        }
         Node<T> current = firstNode;
         while (current != null) {
             r.append(current.getData().toString());
