@@ -1,4 +1,5 @@
 ShuffleBox
+
 ShuffleBox is a console-based Java application designed to manage, play, shuffle, and track your music playlist using a type-safe generic linked chain data structure.
 
 Class Design:
