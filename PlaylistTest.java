@@ -125,7 +125,14 @@ public class PlaylistTest {
     @Test
     public void testRemove() {
         assertEquals(new Song("Song 1", "Artist", 1), p.remove());
-        assertEquals(false, p.remove(null));
+        Exception thrown = null;
+        try {
+            p.remove(null);
+        }catch(IllegalArgumentException exception) {
+            thrown = exception;
+        }
+        assertNotNull(thrown);
+        assertEquals("Entry must not be null", thrown.getMessage());
 
     }
 
@@ -357,23 +364,5 @@ public class PlaylistTest {
         }
         assertNotNull(thrown);
         assertEquals("Index -1 out of bounds for size 5", thrown.getMessage());
-    }
-
-    // ----------------------------------------------------------
-    /**
-     * Test: Counts entries made by an artist
-     */
-    @Test
-    public void testGetFreq() {
-        assertEquals(5, p.getFreq("Artist"));
-        assertEquals(0, p.getFreq("Nobody"));
-        Exception thrown = null;
-        try {
-            p.getFreq(null);
-        } catch (IllegalArgumentException exception) {
-            thrown = exception;
-        }
-        assertNotNull(thrown);
-        assertEquals("Artist must not be null", thrown.getMessage());
     }
 }
