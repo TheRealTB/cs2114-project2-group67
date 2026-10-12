@@ -299,31 +299,6 @@ public class Playlist<T> {
     }
 
     /**
-     * Counts how many entries in this chain were made by the given creator.
-     * Entries that are not MediaType are skipped.
-     *
-     * @param artist the creator/artist name to look for
-     * @return number of entries whose creator equals artist
-     * @throws IllegalArgumentException if artist is null
-     */
-    public int getFreq(String artist) {
-        if (artist == null) {
-            throw new IllegalArgumentException("Artist must not be null");
-        }
-        int frequency = 0;
-        Node<T> current = firstNode;
-        while (current != null) {
-            T data = current.getData();
-            if (data instanceof MediaType
-                    && ((MediaType) data).getCreator().equals(artist)) {
-                frequency++;
-            }
-            current = current.getNext();
-        }
-        return frequency;
-    }
-
-    /**
      * Rejects null entries.
      *
      * @param entry the entry to check
