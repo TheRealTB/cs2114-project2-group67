@@ -36,6 +36,8 @@ cursorFix O(1)
 
 # Next Steps
 
+The main next steps in the program are finishing test cases, ensuring the MVP is fully finished, and implementing any possible stretch goals. Test cases primarily need to be finished within ShuffleBoxRunner to ensure that each method is working properly. The MVP should be fully complete; however, based on test results some changes may need to be made to fix any errors. Finally the stretch goals we could still attempt to add are a no repeat shuffle that would play all unique media before playing any repeated media. We will be dropping the weighted shuffle stretch goal due to being overly complex while also being significantly repeated with the project having two different shuffle methods already.
+
 # Attribution
 
 
