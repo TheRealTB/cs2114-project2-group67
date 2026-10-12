@@ -54,6 +54,7 @@ The main next steps in the program are finishing test cases, ensuring the MVP is
 |NodeTest|Tyler|Wrote unit tests for Node|
 |PlaylistTest|Tyler|Wrote unit tests for Playlist|
 |ShuffleBoxRunnerTest|Tue|Wrote unit tests for ShuffleBoxRunner|
+|ShuffleBoxRunnerTest| Ethan | Finished writing test cases for all methods in ShuffleBoxRunner | 
 
 # ShuffleBox
 
