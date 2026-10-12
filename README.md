@@ -69,7 +69,7 @@ ShuffleBox is a console-based Java application designed to manage, play, shuffle
 
 # How to compile and run
 
-
+Compilation and running takes place in JUnit 5 JRE 1.8. Ensure all files are added before using and run program from ShuffleBoxRunner or run tests from each individual test class
 
 # Class Design:
 
