@@ -1,14 +1,14 @@
 package musicPlaylist;
 
 import java.util.*;
+
 import java.io.*;
-import org.w3c.dom.Node;
 
 // -------------------------------------------------------------------------
 /**
  * Playlist full of song nodes
  * 
- * @author Tyler
+ * @author Tyler, Tue Tran
  * @version Sep 26, 2026
  * @param <T>
  */
@@ -42,6 +42,9 @@ public class Playlist<T> {
      * @param firstNode
      */
     public void setFirstNode(Node<T> firstNode) {
+        if (firstNode == null) {
+            throw new IllegalArgumentException("First node must not be null");
+        }
         this.firstNode = firstNode;
     }
 
@@ -88,7 +91,7 @@ public class Playlist<T> {
      * @throws IllegalArgumentException if newEntry is null
      */
     public boolean add(T newEntry) {
-        requireNonNull(newEntry);
+        requireNotNull(newEntry);
         firstNode = new Node<T>(newEntry, firstNode);
         numberOfEntries++;
         return true;
@@ -102,7 +105,7 @@ public class Playlist<T> {
      * @throws IllegalArgumentException if newEntry is null
      */
     public boolean addToEnd(T newEntry) {
-        requireNonNull(newEntry);
+        requireNotNull(newEntry);
         Node<T> newNode = new Node<T>(newEntry);
         if (firstNode == null) {
             firstNode = newNode;
@@ -136,11 +139,15 @@ public class Playlist<T> {
      * Removes the first occurrence of a given entry from this chain.
      *
      * @param anEntry the entry to be removed
-     * @return true if the removal was successful, or false if not
+     * @return true if removed
+     * @throws IllegalArgumentException if anEntry is null or not in the chain
      */
     public boolean remove(T anEntry) {
-        if (anEntry == null || firstNode == null) {
-            return false;
+        if (anEntry == null) {
+            throw new IllegalArgumentException("Entry must not be null");
+        }
+        if (firstNode == null) {
+            throw new IllegalArgumentException("Entry is not in the playlist");
         }
         if (anEntry.equals(firstNode.getData())) {
             firstNode = firstNode.getNext();
@@ -158,7 +165,7 @@ public class Playlist<T> {
             previous = current;
             current = current.getNext();
         }
-        return false;
+        throw new IllegalArgumentException("Entry is not in the playlist");
     }
 
     /**
@@ -314,7 +321,7 @@ public class Playlist<T> {
      * @param entry the entry to check
      * @throws IllegalArgumentException if entry is null
      */
-    private void requireNonNull(T entry) {
+    public void requireNotNull(T entry) {
         if (entry == null) {
             throw new IllegalArgumentException("Cannot add null to chain");
         }

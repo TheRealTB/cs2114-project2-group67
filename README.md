@@ -10,7 +10,7 @@ Main method features several helper methods that were not included in specificat
 
 all MediaTypes have both an overwritten toString and formattedToString method now, with toString being for files and formattedTostring being for printing
 
-Playlist no longer holds frequency of artist, handled in ShuffleBoxRunner to ensure type safety
+
 
 Time complexity updated from spec
 
