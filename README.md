@@ -38,6 +38,21 @@ cursorFix O(1)
 
 # Attribution
 
+
+|Task|Name|Description|
+|----|----|-----------|
+|MediaType|Tyler|Wrote MediaType class and all methods|
+|Song|Tyler|Wrote Song class and implemented all methods|
+|Movie|Tyler|Wrote Movie class and methods|
+|Node|Tyler|Wrote generic Node class and all methods|
+|Playlist|Tyler|Wrote generic linked chain class and methods, gemini used for shuffle method|
+|ShuffleBoxRunner|Tyler|Wrote class and methods, gemini used for forceClear method|
+|SongTest|Tyler|Wrote unit tests for Song|
+|MovieTest|Ethan|Wrote unit tests for Movie|
+|NodeTest|Tyler|Wrote unit tests for Node|
+|PlaylistTest|Tyler|Wrote unit tests for Playlist|
+|ShuffleBoxRunnerTest|Tue|Wrote unit tests for ShuffleBoxRunner|
+
 # ShuffleBox
 
 ShuffleBox is a console-based Java application designed to manage, play, shuffle, and track your music playlist using a type-safe generic linked chain data structure. The app pulls random songs to play and can keep track of which artists you've been listening to the most.
