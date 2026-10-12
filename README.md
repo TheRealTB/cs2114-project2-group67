@@ -1,8 +1,14 @@
-ShuffleBox
+CS 2114 - Project 2 - Group 67
 
-ShuffleBox is a console-based Java application designed to manage, play, shuffle, and track your music playlist using a type-safe generic linked chain data structure.
+# ShuffleBox
 
-Class Design:
+ShuffleBox is a console-based Java application designed to manage, play, shuffle, and track your music playlist using a type-safe generic linked chain data structure. The app pulls random songs to play and can keep track of which artists you've been listening to the most.
+
+# How to compile and run
+
+
+
+# Class Design:
 
 ShuffleBoxRunner - the main execution class. It prompts the user via a text-based console menu, handles File I/O for saving/loading history, manages user inputs for songs, and calculates the frequency of specific artists.
 
