@@ -31,7 +31,7 @@ import java.awt.event.*;
 public class ShuffleBoxRunner {
     private static Playlist<MediaType> list;
     private static Scanner scanFile;
-    private static Scanner scanUser;
+    private static Scanner scanUser = new Scanner(System.in);
     private static BufferedWriter writer;
     private static File f;
 
@@ -158,7 +158,6 @@ public class ShuffleBoxRunner {
                             + "[9] Exit\n"
                             + "Enter Your Selection: ");
             cursorFix();
-            scanUser = new Scanner(System.in);
             try {
                 in = scanUser.nextLine();
                 i = Integer.parseInt(in.trim().substring(0, 1));
@@ -169,7 +168,6 @@ public class ShuffleBoxRunner {
                 prompt(false);
             }
         } else {
-            scanUser = new Scanner(System.in);
             System.out.print("[Any] Back: ");
             cursorFix();
             in = scanUser.nextLine();
@@ -185,7 +183,6 @@ public class ShuffleBoxRunner {
      * @param i
      */
     public static void prompt(int i) {
-        scanUser = new Scanner(System.in);
         switch (i) {
             case 1: // add
                 forceClear();
