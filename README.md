@@ -1,5 +1,43 @@
 CS 2114 - Project 2 - Group 67
 
+# Reflection
+
+Added MediaType interface that is implemented by Song and Movie; Changed what the linked chain holds from Song objects to MediaType objects Song and Movie so that the linked chain held multiple classes
+
+ShuffleBoxRunner now uses a linked chain, two scanners - one for file and one for user input, a file and BufferedWriter so that it can more effectively read and write files and handle user input too
+
+Main method features several helper methods that were not included in specification doc: readHistory, writeHistory, prompt, displayRuntime, displayPlaylist, getItemByName, forceClear, and cursorFix
+
+all MediaTypes have both an overwritten toString and formattedToString method now, with toString being for files and formattedTostring being for printing
+
+Playlist no longer holds frequency of artist, handled in ShuffleBoxRunner to ensure type safety
+
+Time complexity updated from spec
+
+shuffle() time complexity should be O(N^2) instead of O(N)
+
+readHistory O(N)
+
+writeHistory O(N)
+
+prompt(boolean) O(1)
+
+prompt(int) O(1) unless case 6: O(N)
+
+displayRuntime O(N)
+
+displayPlaylist O(N)
+
+getItemByName O(1)
+
+forceClear O(1)
+
+cursorFix O(1)
+
+# Next Steps
+
+# Attribution
+
 # ShuffleBox
 
 ShuffleBox is a console-based Java application designed to manage, play, shuffle, and track your music playlist using a type-safe generic linked chain data structure. The app pulls random songs to play and can keep track of which artists you've been listening to the most.
