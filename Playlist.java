@@ -1,11 +1,7 @@
-// -------------------------------------------------------------------------
-// Virginia Tech Honor Code Pledge:
-//
-// As a Hokie, I will conduct myself with honor and integrity at all times.
-// I will not lie, cheat, or steal, nor will I accept the actions of those who do.
-// -- tuetranminh
-// LLM Statement:
-//I have not used any assistance for the assignment beyond course resources and staff.
+/*TODO implement noDuplicateShuffle that shuffles the unique items of the list
+ * then recurses on the non-unique items until all items are shuffled
+ * basically just call the shuffle method on unique parts until shuffled then merge
+*/
 package musicPlaylist;
 
 import java.util.*;
@@ -275,7 +271,7 @@ public class Playlist<T> {
 
     // ----------------------------------------------------------
     /**
-     * Shuffles the order of the playlist (hopefully)
+     * Shuffles the order of the playlist
      */
     @SuppressWarnings("unchecked")
     public void shuffle() {
