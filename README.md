@@ -57,8 +57,8 @@ The main next steps in the program are finishing test cases, ensuring the MVP is
 |ShuffleBoxRunnerTest| Ethan | Finished writing test cases for all methods in ShuffleBoxRunner | 
 |Song|Tue|Added setter validation for null name or creator and negative runtime|
 |SongTest|Tue|Updated tests for getCreator, setCreator, and toString, added test for bad setter input|
-|Playlist|Tue|Added Validation for setFirstNode, remove, and requireNotNul, sed claude to brainstorm method ideas and fix tests|
-|PlaylistTest|Tue|Added tests for setFirstNode, remove, count, requireNotNull, toArray, and get with bad input, sed claude to brainstorm method ideas and fix tests.|
+|Playlist|Tue|Added Validation for setFirstNode, remove, and requireNotNul, used claude to brainstorm method ideas and fix tests|
+|PlaylistTest|Tue|Added tests for setFirstNode, remove, count, requireNotNull, toArray, and get with bad input, used claude to brainstorm method ideas and fix tests.|
 |ShuffleBoxRunner|Tue|Fixed readHistory bug and added null check for add menu options|
 
 
