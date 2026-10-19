@@ -8,6 +8,29 @@ ShuffleBox is a console-based Java application designed to manage, play, shuffle
 
 Compilation and running takes place in JUnit 5 JRE 1.8. Ensure all files are added before using and run program from ShuffleBoxRunner or run tests from each individual test class
 
+| Name                                               | Type  |
+|----------------------------------------------------|-------|
+| Bohemian Rhapsody                                  | Song  |
+| Blinding Lights                                    | Song  |
+| Billie Jean                                        | Song  |
+| Rolling in the Deep                                | Song  |
+| Smells Like Teen Spirit                            | Song  |
+| Hey Jude                                           | Song  |
+| Hotel California                                   | Song  |
+| Imagine                                            | Song  |
+| Sweet Child O' Mine                                | Song  |
+| One                                                | Song  |
+| The Shawshank Redemption                           | Movie |
+| The Godfather                                      | Movie |
+| The Dark Knight                                    | Movie |
+| The Godfather Part II                              | Movie |
+| 12 Angry Men                                       | Movie |
+| Schindler's List                                   | Movie |
+| The Lord of the Rings: The Return of the King      | Movie |
+| Pulp Fiction                                       | Movie |
+| Inception                                          | Movie |
+| Fight Club                                         | Movie |
+
 # Attribution
 
 |Task|Name|Description|
