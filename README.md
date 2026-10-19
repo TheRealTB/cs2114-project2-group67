@@ -8,6 +8,8 @@ ShuffleBox is a console-based Java application designed to manage, play, shuffle
 
 Compilation and running takes place in JUnit 5 JRE 1.8. Ensure all files are added before using and run program from ShuffleBoxRunner or run tests from each individual test class
 
+List of MediaType objects by name that can be added/removed from the Playlist
+
 | Name                                               | Type  |
 |----------------------------------------------------|-------|
 | Bohemian Rhapsody                                  | Song  |
