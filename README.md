@@ -8,6 +8,26 @@ ShuffleBox is a console-based Java application designed to manage, play, shuffle
 
 Compilation and running takes place in JUnit 5 JRE 1.8. Ensure all files are added before using and run program from ShuffleBoxRunner or run tests from each individual test class
 
+|Task|Name|Description|
+|----|----|-----------|
+|MediaType|Tyler|Wrote MediaType class and all methods|
+|Song|Tyler|Wrote Song class and implemented all methods|
+|Movie|Tyler|Wrote Movie class and methods|
+|Node|Tyler|Wrote generic Node class and all methods|
+|Playlist|Tyler|Wrote generic linked chain class and methods, gemini used for shuffle method|
+|ShuffleBoxRunner|Tyler|Wrote class and methods, gemini used for forceClear method|
+|SongTest|Tyler|Wrote unit tests for Song|
+|MovieTest|Ethan|Wrote unit tests for Movie|
+|NodeTest|Tyler|Wrote unit tests for Node|
+|PlaylistTest|Tyler|Wrote unit tests for Playlist|
+|ShuffleBoxRunnerTest|Tue|Wrote unit tests for ShuffleBoxRunner|
+|ShuffleBoxRunnerTest| Ethan | Finished writing test cases for all methods in ShuffleBoxRunner | 
+|Song|Tue|Added setter validation for null name or creator and negative runtime|
+|SongTest|Tue|Updated tests for getCreator, setCreator, and toString, added test for bad setter input|
+|Playlist|Tue|Added Validation for setFirstNode, remove, and requireNotNul, used claude to brainstorm method ideas and fix tests|
+|PlaylistTest|Tue|Added tests for setFirstNode, remove, count, requireNotNull, toArray, and get with bad input, used claude to brainstorm method ideas and fix tests.|
+|ShuffleBoxRunner|Tue|Fixed readHistory bug and added null check for add menu options|
+
 # Reflection
 
 Added MediaType interface that is implemented by Song and Movie; Changed what the linked chain holds from Song objects to MediaType objects Song and Movie so that the linked chain held multiple classes
@@ -47,27 +67,6 @@ cursorFix O(1)
 The main next steps in the program are finishing test cases, ensuring the MVP is fully finished, and implementing any possible stretch goals. Test cases primarily need to be finished within ShuffleBoxRunner to ensure that each method is working properly. The MVP should be fully complete; however, based on test results some changes may need to be made to fix any errors. Finally the stretch goals we could still attempt to add are a no repeat shuffle that would play all unique media before playing any repeated media. We will be dropping the weighted shuffle stretch goal due to being overly complex while also being significantly repeated with the project having two different shuffle methods already.
 
 # Attribution
-
-
-|Task|Name|Description|
-|----|----|-----------|
-|MediaType|Tyler|Wrote MediaType class and all methods|
-|Song|Tyler|Wrote Song class and implemented all methods|
-|Movie|Tyler|Wrote Movie class and methods|
-|Node|Tyler|Wrote generic Node class and all methods|
-|Playlist|Tyler|Wrote generic linked chain class and methods, gemini used for shuffle method|
-|ShuffleBoxRunner|Tyler|Wrote class and methods, gemini used for forceClear method|
-|SongTest|Tyler|Wrote unit tests for Song|
-|MovieTest|Ethan|Wrote unit tests for Movie|
-|NodeTest|Tyler|Wrote unit tests for Node|
-|PlaylistTest|Tyler|Wrote unit tests for Playlist|
-|ShuffleBoxRunnerTest|Tue|Wrote unit tests for ShuffleBoxRunner|
-|ShuffleBoxRunnerTest| Ethan | Finished writing test cases for all methods in ShuffleBoxRunner | 
-|Song|Tue|Added setter validation for null name or creator and negative runtime|
-|SongTest|Tue|Updated tests for getCreator, setCreator, and toString, added test for bad setter input|
-|Playlist|Tue|Added Validation for setFirstNode, remove, and requireNotNul, used claude to brainstorm method ideas and fix tests|
-|PlaylistTest|Tue|Added tests for setFirstNode, remove, count, requireNotNull, toArray, and get with bad input, used claude to brainstorm method ideas and fix tests.|
-|ShuffleBoxRunner|Tue|Fixed readHistory bug and added null check for add menu options|
 
 # Class Design:
 
