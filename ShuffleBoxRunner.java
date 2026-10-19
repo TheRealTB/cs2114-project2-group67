@@ -160,10 +160,15 @@ public class ShuffleBoxRunner {
             cursorFix();
             try {
                 in = scanUser.nextLine();
-                i = Integer.parseInt(in.trim().substring(0, 1));
+                i = Integer.parseInt(in.trim());
                 forceClear();
                 prompt(i);
+            }catch(StringIndexOutOfBoundsException s) {
+                forceClear();
+                System.out.println("Please enter a valid number.");
+                prompt(false);
             } catch (NumberFormatException e) {
+                forceClear();
                 System.out.println("Please enter a number.");
                 prompt(false);
             }
@@ -222,7 +227,7 @@ public class ShuffleBoxRunner {
                 prompt(8);
                 break;
             case 5:
-                list.shuffle();
+                list.noRepeatShuffle(list);
                 prompt(8);
                 break;
             case 6: // Creator Frequency
@@ -261,13 +266,21 @@ public class ShuffleBoxRunner {
                 break;
             case 9: // end
                 System.out.println("Thank you for using ShuffleBox!");
-                scanUser.close();
+                try{
+                    scanUser.close();
+                }catch(IllegalStateException e) {
+                    /*
+                     * Ensures that excessive method calls don't try to close
+                     * an already closed scanner. Catch block doesn't need
+                     * to do anything just stop the exception (CRAZY EDGE CASE)
+                     */
+                }
+                writeHistory();
                 break;
             default: // re-prompt
                 System.out.printf("[%d] is invalid, enter a number [1-9]\n", i);
                 prompt(false);
         }
-        writeHistory();
     }
 
     // ----------------------------------------------------------
