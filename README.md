@@ -1,5 +1,13 @@
 CS 2114 - Project 2 - Group 67
 
+# ShuffleBox
+
+ShuffleBox is a console-based Java application designed to manage, play, shuffle, and track your music playlist using a type-safe generic linked chain data structure. The app pulls random songs to play and can keep track of which artists you've been listening to the most.
+
+# How to compile and run
+
+Compilation and running takes place in JUnit 5 JRE 1.8. Ensure all files are added before using and run program from ShuffleBoxRunner or run tests from each individual test class
+
 # Reflection
 
 Added MediaType interface that is implemented by Song and Movie; Changed what the linked chain holds from Song objects to MediaType objects Song and Movie so that the linked chain held multiple classes
@@ -60,16 +68,6 @@ The main next steps in the program are finishing test cases, ensuring the MVP is
 |Playlist|Tue|Added Validation for setFirstNode, remove, and requireNotNul, used claude to brainstorm method ideas and fix tests|
 |PlaylistTest|Tue|Added tests for setFirstNode, remove, count, requireNotNull, toArray, and get with bad input, used claude to brainstorm method ideas and fix tests.|
 |ShuffleBoxRunner|Tue|Fixed readHistory bug and added null check for add menu options|
-
-
-
-# ShuffleBox
-
-ShuffleBox is a console-based Java application designed to manage, play, shuffle, and track your music playlist using a type-safe generic linked chain data structure. The app pulls random songs to play and can keep track of which artists you've been listening to the most.
-
-# How to compile and run
-
-Compilation and running takes place in JUnit 5 JRE 1.8. Ensure all files are added before using and run program from ShuffleBoxRunner or run tests from each individual test class
 
 # Class Design:
 
