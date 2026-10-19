@@ -325,7 +325,7 @@ public class Playlist<T> {
         this.clear();
         Node<T> newNode = unique.getFirstNode();
         while (newNode != null) {
-            this.addToEnd(newNode.getData());
+            this.add(newNode.getData());
             newNode = newNode.getNext();
         }
     }
