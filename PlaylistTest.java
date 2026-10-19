@@ -227,6 +227,33 @@ public class PlaylistTest {
             assertTrue(allNotSame);
         }
     }
+    
+    // ----------------------------------------------------------
+    /**
+     * Tests no repeat shuffle
+     */
+    @Test
+    public void testNoRepeatShuffle() {
+        p.clear();
+        for (int i = 0; i < 10; i++) {
+            p.add(new Song("Name", "Artist", i%5));
+        }
+        Song[] before = new Song[p.size()];
+        before = p.toArray(before);
+        System.out.println(Arrays.toString(before));
+        p.noRepeatShuffle(p);
+        Song[] after = new Song[p.size()];
+        after = p.toArray(after);
+        System.out.println(Arrays.toString(after));
+        boolean allNotSame = false;
+        for (int i = 0; i < p.size(); i++) {
+            if (!before[i].toString().equals(after[i].toString())) {
+                allNotSame = true;
+            }
+            // genuinely pray they don't accidentally shuffle to same in testing
+            assertTrue(allNotSame);
+        }
+    }
 
     // ----------------------------------------------------------
     /**
