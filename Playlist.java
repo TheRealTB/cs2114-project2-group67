@@ -293,6 +293,42 @@ public class Playlist<T> {
             addToEnd(before[arr[i]]);
         }
     }
+    
+    // ----------------------------------------------------------
+    /**
+     * Shuffles unique elements first, then remaining elements
+     * @param list the remainder/non-unique remaining part (or whole list)
+     */
+    public void noRepeatShuffle(Playlist<T> list) {
+        Playlist<T> unique = new Playlist<T>();
+        Playlist<T> remainder = new Playlist<T>();
+        Node<T> current = list.getFirstNode();
+
+        // Separate unique and remainder elements
+        while (current != null) {
+            if (!unique.contains(current.getData())) {
+                unique.add(current.getData());
+            } else {
+                remainder.add(current.getData());
+            }
+            current = current.getNext();
+        }
+        unique.shuffle();
+        if (remainder.size() > 0) {
+            remainder.noRepeatShuffle(remainder);
+            Node<T> c = remainder.getFirstNode();
+            while (c != null) {
+                unique.add(c.getData());
+                c = c.getNext();
+            }
+        }
+        this.clear();
+        Node<T> newNode = unique.getFirstNode();
+        while (newNode != null) {
+            this.addToEnd(newNode.getData());
+            newNode = newNode.getNext();
+        }
+    }
 
     /**
      * Rejects null entries.
